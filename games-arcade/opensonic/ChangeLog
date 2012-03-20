@@ -2,6 +2,10 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Mar 2012; cosmoslx opensonic-0.1.4.ebuild,
+  +files/opensnc-0.1.4-fix-hardcode-path.patch:
+  using patch instead of sed to modify hardcode resource path
+
 *opensonic-0.1.4 (20 Mar 2012)
 
   20 Mar 2012; cosmoslx +opensonic-0.1.4.ebuild, +metadata.xml:

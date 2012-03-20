@@ -26,27 +26,29 @@ DEPEND="${RDEPEND}"
 S=${WORKDIR}/${MY_P}
 
 src_prepare() {
-	einfo "Changing game resources hardcode path..."
+	epatch ${FILESDIR}/opensnc-0.1.4-fix-hardcode-path.patch
 
-	sed -i -e "s:sprites/:"${GAMES_DATADIR}"/"${PN}"/sprites/:g" -i src/core/sprite.c
-	sed -i -e "s:languages/:"${GAMES_DATADIR}"/"${PN}"/languages/:g" -i src/core/lang.h
-	sed -i -e "s:samples/:"${GAMES_DATADIR}"/"${PN}"/samples/:g" -i config/samples.def
-	sed -i -e "s:languages/:"${GAMES_DATADIR}"/"${PN}"/languages/:g" -i src/scenes/langselect.c
-	sed -i -e "s:quests/:"${GAMES_DATADIR}"/"${PN}"/quests/:g" -i src/scenes/menu.c
-	for i in `find sprites -name *.spr`; do sed -i "$i" -e "s:images/:"${GAMES_DATADIR}"/"${PN}/images/":g"; done
-	for i in `find src -name *.[ch]`; do sed -i "$i" -e "s:config/samples:"${GAMES_DATADIR}"/"${PN}"/config/samples:g";done
-	for i in `find src -name *.[ch]`; do sed -i "$i" -e "s:images/:"${GAMES_DATADIR}"/"${PN}/images/":g"; done
-	for i in `find src -name *.[ch]`; do sed -i "$i" -e "s:levels/:"${GAMES_DATADIR}"/"${PN}/levels/":g"; done
-	for i in `find src -name *.[ch]`; do sed -i "$i" -e "s:musics/:"${GAMES_DATADIR}"/"${PN}/musics/":g"; done
-	for i in `find src -name *.[ch]`; do sed -i "$i" -e "s:objects/:"${GAMES_DATADIR}"/"${PN}/objects/":g"; done
-	for i in `find src -name *.[ch]`; do sed -i "$i" -e "s:samples/:"${GAMES_DATADIR}"/"${PN}/samples/":g"; done
-	for i in `find src -name *.[ch]`; do sed -i "$i" -e "s:themes/:"${GAMES_DATADIR}"/"${PN}/themes/":g"; done
-	for i in `find themes -name *.brk`; do sed -i "$i" -e "s:images/:"${GAMES_DATADIR}"/"${PN}/images/":g"; done
-	for i in `find themes -name *.bg`; do sed -i "$i" -e "s:images/:"${GAMES_DATADIR}"/"${PN}/images/":g"; done
-	for i in `find quests -name *.qst`; do sed -i "$i" -e "s:images/:"${GAMES_DATADIR}"/"${PN}/images/":g"; done
-	for i in `find quests -name *.qst`; do sed -i "$i" -e "s:levels/:"${GAMES_DATADIR}"/"${PN}/levels/":g"; done
-	for i in `find levels -name *.lev`; do sed -i "$i" -e "s:musics/:"${GAMES_DATADIR}"/"${PN}/musics/":g"; done
-	for i in `find levels -name *.lev`; do sed -i "$i" -e "s:themes/:"${GAMES_DATADIR}"/"${PN}/themes/":g"; done
+	#einfo "Changing game resources hardcode path..."
+
+	#sed -i -e "s:sprites/:"${GAMES_DATADIR}"/"${PN}"/sprites/:g" -i src/core/sprite.c
+	#sed -i -e "s:languages/:"${GAMES_DATADIR}"/"${PN}"/languages/:g" -i src/core/lang.h
+	#sed -i -e "s:samples/:"${GAMES_DATADIR}"/"${PN}"/samples/:g" -i config/samples.def
+	#sed -i -e "s:languages/:"${GAMES_DATADIR}"/"${PN}"/languages/:g" -i src/scenes/langselect.c
+	#sed -i -e "s:quests/:"${GAMES_DATADIR}"/"${PN}"/quests/:g" -i src/scenes/menu.c
+	#for i in `find sprites -name *.spr`; do sed -i "$i" -e "s:images/:"${GAMES_DATADIR}"/"${PN}/images/":g"; done
+	#for i in `find src -name *.[ch]`; do sed -i "$i" -e "s:config/samples:"${GAMES_DATADIR}"/"${PN}"/config/samples:g";done
+	#for i in `find src -name *.[ch]`; do sed -i "$i" -e "s:images/:"${GAMES_DATADIR}"/"${PN}/images/":g"; done
+	#for i in `find src -name *.[ch]`; do sed -i "$i" -e "s:levels/:"${GAMES_DATADIR}"/"${PN}/levels/":g"; done
+	#for i in `find src -name *.[ch]`; do sed -i "$i" -e "s:musics/:"${GAMES_DATADIR}"/"${PN}/musics/":g"; done
+	#for i in `find src -name *.[ch]`; do sed -i "$i" -e "s:objects/:"${GAMES_DATADIR}"/"${PN}/objects/":g"; done
+	#for i in `find src -name *.[ch]`; do sed -i "$i" -e "s:samples/:"${GAMES_DATADIR}"/"${PN}/samples/":g"; done
+	#for i in `find src -name *.[ch]`; do sed -i "$i" -e "s:themes/:"${GAMES_DATADIR}"/"${PN}/themes/":g"; done
+	#for i in `find themes -name *.brk`; do sed -i "$i" -e "s:images/:"${GAMES_DATADIR}"/"${PN}/images/":g"; done
+	#for i in `find themes -name *.bg`; do sed -i "$i" -e "s:images/:"${GAMES_DATADIR}"/"${PN}/images/":g"; done
+	#for i in `find quests -name *.qst`; do sed -i "$i" -e "s:images/:"${GAMES_DATADIR}"/"${PN}/images/":g"; done
+	#for i in `find quests -name *.qst`; do sed -i "$i" -e "s:levels/:"${GAMES_DATADIR}"/"${PN}/levels/":g"; done
+	#for i in `find levels -name *.lev`; do sed -i "$i" -e "s:musics/:"${GAMES_DATADIR}"/"${PN}/musics/":g"; done
+	#for i in `find levels -name *.lev`; do sed -i "$i" -e "s:themes/:"${GAMES_DATADIR}"/"${PN}/themes/":g"; done
 }
 
 src_configure() {
