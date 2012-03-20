@@ -1,0 +1,9 @@
+# ChangeLog for games-arcade/opensonic
+# Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*opensonic-0.1.4 (20 Mar 2012)
+
+  20 Mar 2012; cosmoslx +opensonic-0.1.4.ebuild, +metadata.xml:
+  Inital import ebuild
+
