@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE=""
 
-DEPEND=">=virutal/jre-1.6"
+DEPEND=">=virtual/jre-1.6"
 RDEPEND="${DEPEND}"
 
 src_configure() {
