@@ -1,0 +1,12 @@
+diff -Nura qterm-0.5.11/CMakeLists.txt qterm-0.5.11-fix/CMakeLists.txt
+--- qterm-0.5.11/CMakeLists.txt	2012-03-10 11:09:42.941338624 +0800
++++ qterm-0.5.11-fix/CMakeLists.txt	2012-03-10 11:09:30.943488617 +0800
+@@ -7,7 +7,7 @@
+ set(QTERM_VERSION_RELEASE 11)
+ set(QTERM_VERSION "${QTERM_VERSION_MAJOR}.${QTERM_VERSION_MINOR}.${QTERM_VERSION_RELEASE}" )
+ set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
+-find_package(Qt4 REQUIRED)
++#find_package(Qt4 REQUIRED)
+ find_package(KDE4)
+ add_subdirectory(src)
+ add_subdirectory(icons)

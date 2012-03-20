@@ -20,6 +20,7 @@ DEPEND="${RDEPEND}"
 
 src_prepare() {
 	epatch "${FILESDIR}"/"${PN}"-0.5.11-gentoo.patch
+	epatch "${FILESDIR}"/"${P}"-invalid-qt-version-string-given.patch
 }
 
 src_install() {
