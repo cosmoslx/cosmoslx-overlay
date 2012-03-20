@@ -32,9 +32,11 @@ src_install() {
 	insinto /opt/briss
 	doins *.jar || die "can't install *.jar"
 
+	dodoc *.txt || die "can't creat docs"
+
 	exeinto /opt/briss
 	doexe "${FILESDIR}"/briss-bin || die "can't install briss-bin"
-	dosym  /opt/briss/briss-bin /opt/bin/ || die "can't create symlink"
+	dosym  ../briss/briss-bin /opt/bin/briss || die "can't create symlink"
 
-	make_desktop_entry briss briss briss Utility
+	make_desktop_entry briss
 }
