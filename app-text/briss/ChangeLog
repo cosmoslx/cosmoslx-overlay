@@ -2,6 +2,10 @@
 # Copyright 1999-2012 Gentoo Foundation; Distributed under the GPL v2
 # $Header: $
 
+  20 Mar 2012; <cosmoslx@gentoo.org> briss-0.0.13.ebuild, +files/briss,
+  -files/briss-bin:
+  briss-0.0.13 initial commit
+
   20 Mar 2012; <cosmoslx@gentoo.org> ChangeLog:
   initial commit
 

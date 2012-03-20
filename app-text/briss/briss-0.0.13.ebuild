@@ -34,9 +34,8 @@ src_install() {
 
 	dodoc *.txt || die "can't creat docs"
 
-	exeinto /opt/briss
-	doexe "${FILESDIR}"/briss-bin || die "can't install briss-bin"
-	dosym  ../briss/briss-bin /opt/bin/briss || die "can't create symlink"
+	exeinto /opt/bin
+	doexe "${FILESDIR}"/briss || die "can't install briss-bin"
 
 	make_desktop_entry briss
 }
