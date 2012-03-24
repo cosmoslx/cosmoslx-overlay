@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2012 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -47,12 +47,6 @@ pkg_setup() {
 }
 
 src_prepare() {
-	#epatch "${FILESDIR}/${PN}-0.2_beta7-makefile.patch"
-
-	## This is not as it appears, ARCH means something different to qmc2's Makefile
-	## then it means to the portage/portage-compatible package manager
-	#sed -ie 's%ifndef ARCH%ifdef ARCH%' Makefile
-
 	use sdlmess && cp -r "${S}" "${WORKDIR}/${PN}-sdlmess"
 }
 
@@ -81,12 +75,8 @@ src_install() {
 	    emake ${FLAGS} EMULATOR=SDLMESS install || die "make install failed"
 	fi
 
-	## Not a big fan of doing this, but it's necessary due to build system
-	#sed -ie "s%${D}%/%g" "${D}etc/${PN}/${PN}.ini"
-	#rm "${D}etc/${PN}/${PN}.inie"
-
-	# Remove symlink to avoid confusion
-	#rm "${D}/${GAMES_BINDIR}/qmc2"
+	## reusing the package desktop file
+	mv "${D}/usr/share/games/applications" "${D}/usr/share/" && einfo "Reusing desktop file ..."
 
 	prepgamesdirs
 }
