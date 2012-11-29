@@ -1,0 +1,62 @@
+--- setup.py.orig	2006-09-24 22:03:40.000000000 +0200
++++ setup.py	2007-11-18 16:34:37.000000000 +0100
+@@ -44,30 +44,30 @@
+ 	package_dir={'xgngeo': 'data/py'},
+ 	data_files=[
+ 		#Images.
+-		(os.path.join("share", "xgngeo", "img"),glob.glob(os.path.join("data", "img", "*.png"))),
++		(os.path.join("share", "games", "xgngeo", "img"),glob.glob(os.path.join("data", "img", "*.png"))),
+ 		#ROM info.
+-		(os.path.join("share", "xgngeo"),glob.glob(os.path.join("data", "rominfos.*"))),
++		(os.path.join("share", "games", "xgngeo"),glob.glob(os.path.join("data", "rominfos.*"))),
+ 		#License text.
+-		(os.path.join("share", "xgngeo"),['LICENSE.txt']),
++		(os.path.join("share", "games", "xgngeo"),['LICENSE.txt']),
+ 		#Plain text documentation.
+-		(os.path.join("share", "xgngeo","doc"),[os.path.join("doc", "xgngeo-doc.txt")]),
++		(os.path.join("share", "games", "xgngeo","doc"),[os.path.join("doc", "xgngeo-doc.txt")]),
+ 		# *.desktop (menu entry)
+ 		(os.path.join("share", "applications"), [os.path.join("data", "misc", "xgngeo.desktop")]),
+ 		#Localization files.
+ 		#Spanish
+-		(os.path.join("share", "xgngeo", "locale", "es", "LC_MESSAGES"),
++		(os.path.join("share", "games", "xgngeo", "locale", "es", "LC_MESSAGES"),
+ 			[os.path.join("data", "locale", "es", "LC_MESSAGES", "xgngeo.mo")]),
+ 		#German
+-		(os.path.join("share", "xgngeo", "locale", "de", "LC_MESSAGES"),
++		(os.path.join("share", "games", "xgngeo", "locale", "de", "LC_MESSAGES"),
+ 			[os.path.join("data", "locale", "de", "LC_MESSAGES", "xgngeo.mo")]),
+ 		#French
+-		(os.path.join("share", "xgngeo", "locale", "fr", "LC_MESSAGES"),
++		(os.path.join("share", "games", "xgngeo", "locale", "fr", "LC_MESSAGES"),
+ 			[os.path.join("data", "locale", "fr", "LC_MESSAGES", "xgngeo.mo")]),
+ 		#Polish
+-		(os.path.join("share", "xgngeo", "locale", "pl", "LC_MESSAGES"),
++		(os.path.join("share", "games", "xgngeo", "locale", "pl", "LC_MESSAGES"),
+ 			[os.path.join("data", "locale", "pl", "LC_MESSAGES", "xgngeo.mo")]),
+ 		#Portuguese of Brazil
+-		(os.path.join("share", "xgngeo", "locale", "pt_BR", "LC_MESSAGES"),
++		(os.path.join("share", "games", "xgngeo", "locale", "pt_BR", "LC_MESSAGES"),
+ 			[os.path.join("data", "locale", "pt_BR", "LC_MESSAGES", "xgngeo.mo")])
+ 		]
+ 	)
+@@ -87,7 +87,7 @@
+ 		if not prefix:
+ 			prefix = sys.prefix #Use Python prefix.
+ 
+-		startup_script = os.path.join(prefix, "bin", "xgngeo") #Startup script path.
++		startup_script = os.path.join(prefix, "games", "bin", "xgngeo") #Startup script path.
+ 		startup_script_dir = os.path.dirname(startup_script) 
+ 		
+ 		import shutil
+--- data/py/__init__.py.orig	2007-11-18 16:49:12.000000000 +0100
++++ data/py/__init__.py	2007-11-18 16:49:30.000000000 +0100
+@@ -60,7 +60,7 @@
+ VERSION = "16"
+ xgngeoUserDir = os.path.expanduser("~/.xgngeo")
+ gngeoUserDir = os.path.expanduser("~/.gngeo")
+-datarootpath = os.path.join(sys.prefix, 'share', 'xgngeo')
++datarootpath = os.path.join(sys.prefix, 'share', 'games', 'xgngeo')
+ 
+ # Internationalization.
+ gettext.install("xgngeo", os.path.join(datarootpath, "locale"))
